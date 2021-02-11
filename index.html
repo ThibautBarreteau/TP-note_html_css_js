@@ -1,72 +1,25 @@
 <!DOCTYPE html>
 <html>
-	<head>
+    <head>
         <title> Thibaut Barreteau TP not&eacute;-meteo-sans-js </title>
-	  <meta charset="UTF-8">
-        <style>
-            body {
-                font-size: 10px;
-                background-color: white;
-                font-family: Arial;
-                font-style: sans-serif;
-                }
-            h1 {
-                font-size: 2em;
-                background-color: black;
-                color: white;
-                text-align: center;
-                line-height: 3em;
-                
-            }
-            .cityMeteo{
-                display: flex;
-                justify-content: flex-start;
-                background-color: rgb(200,200,200);
-                border: 10px solid white;
-            }
-            .cityMeteo div h2 {
-                font-size: 1.2em;
-                font-weight: bold;
-            }
-            .cityMeteo div img {
-                height: 4.5em;
-                }
-            .avecFlex div {
-                width:150px;
-            }
-            .avecFlex {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            .avecFlex div:nth-child(1){
-                flex-grow:1;
-            }
-            .avecFlex div:nth-child(2){
-                flex-grow:1;
-            }
-            .avecFlex div:nth-child(3){
-                flex-grow:1;
-                <!--Je ne comprends pas pourquoi ça ne fonctionne pas!!! Si finalement...-->
-            }
-            .cityMeteo div:nth-child(1){
-                flex-grow: 0;
-            }
-            .cityMeteo div:nth-child(2){
-                flex-grow: 1;
-            }
-
-            footer p{
-                background-color: rgb(230,230,230);
-            }
-	  </style>
+        <meta charset="UTF-8">
+        <link href="meteo.css" rel="stylesheet" type="text/css"> <!-- ça fonctionne mieux comme ça -->
+<!--        <style src="meteo.css">
+	  </style>-->
 	</head>
-	<body>
+<!--	<body onload="showCity()"> -->
+    <body>
 	  <h1>TP M&eacute;t&eacute;o HTML</h1>
+	   <p> Pardon d'avoir tant tardé à partager le lien sur tomuss. J'ai eu un mal fou à comprendre comment faire les choses sur github. </p>
 <!--	  <h2>My second heading</h2>
 	  <p>My first paragraph.</p> -->
+        <select name="WhichCity" id="citySelect" onchange="showCity();">
+            <option value="Lyon">Lyon (Rh&ocirc;ne)</option>
+            <option value="Nantes">Nantes (Loire-Atlantique)</option>
+            <option value="Marseille">Marseille (Bouche du Rh&ocirc;ne)</option>
+        </select>
       <div class="avecFlex">
-            <div class="cityMeteo">
+            <div id="Lyon" class="city" >
                 <div>
                     <h2> Lyon </h2>
                     <p> 11&deg;C, Nuageux. </p>
@@ -75,7 +28,7 @@
                     <img src="image-meteo/nuage.png" alt="Logo nuage">
                 </div>
             </div> 
-            <div class="cityMeteo">
+            <div class="city" id="Nantes">
                 <div>
                     <h2> Nantes </h2>
                     <p> 1&deg;C, Pluie. </p>
@@ -84,7 +37,7 @@
                     <img src="image-meteo/pluie.png" alt="Logo pluie">
                 </div>
             </div>
-            <div class="cityMeteo">
+            <div class="city" id="Marseille">
                 <div>
                     <h2> Marseille </h2>
                     <p> 14&deg;C, Soleil. </p>
@@ -104,5 +57,7 @@
             </p>
             
         </footer>
-	  </body>
+    </body>
+        <script src="meteo.js"></script>
+
 </html>
