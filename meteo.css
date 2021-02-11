@@ -1,0 +1,55 @@
+            body {
+                font-size: 10px;
+                background-color: white;
+                font-family: Arial, sans-serif;
+/*                 font-style: ; */
+                }
+            h1 {
+                font-size: 2em;
+                background-color: black;
+                color: white;
+                text-align: center;
+                line-height: 3em;
+                
+            }
+            .city{
+                display: flex;
+                justify-content: flex-start;
+                background-color: rgb(200,200,200);
+                border: 10px solid white;
+            }
+            .city div h2 {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+            .city div img {
+                height: 4.5em;
+                }
+            .avecFlex div {
+                width:150px;
+            }
+            .avecFlex {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .avecFlex div:nth-child(1){
+                flex-grow:1;
+            }
+            .avecFlex div:nth-child(2){
+                flex-grow:1;
+            }
+            .avecFlex div:nth-child(3){
+                flex-grow:1;
+                <!--Je ne comprends pas pourquoi ça ne fonctionne pas!!! -->
+            }
+            .city div:nth-child(1){
+                flex-grow: 0;
+            }
+            .city div:nth-child(2){
+                flex-grow: 1;
+            }
+
+            footer p{
+                background-color: rgb(230,230,230);
+            }
